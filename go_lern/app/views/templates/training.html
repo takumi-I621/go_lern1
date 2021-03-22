@@ -1,0 +1,29 @@
+{{define "content"}}
+<!--formタグで内容を送信している-->
+<form role="form" action="/todos/savetraining" method="post">
+    <div class="lead">Create DayTraining</div>
+    <div class="form-group">
+      <textarea class="form-control" name="content" id="content" placeholder="Trainingを追加" rows="4"></textarea>
+      <br/>
+      <br/>
+
+      <table border="1">
+        <tr>
+          <th>名前</th>
+          <th>年齢</th>
+        </tr>
+        <tr>
+          <th>田中</th>
+          <th>27</th>
+        </tr>
+        <tr>
+          <th>佐藤</th>
+          <th>30</th>
+        </tr>
+      </table>
+
+      <button class="btn btn-lg btn-primary pull-right" type="submit">作成</button>
+    </div>
+</form>
+  
+{{end}}
