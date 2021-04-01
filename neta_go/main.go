@@ -1,10 +1,38 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
-	"math"
+	"os"
 )
 
+func main() {
+	file, err := os.Open("test.csv")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	reader := csv.NewReader(file)
+	var line []string
+	fmt.Println("--- START ---")
+	for {
+		line, err = reader.Read()
+		if err != nil {
+			fmt.Println("--- END ---")
+			break
+		} else if err != nil {
+			fmt.Println("--- ERROR END ---")
+			fmt.Println(err)
+			break
+		}
+		fmt.Println(line)
+
+	}
+
+}
+
+/*
 func main() {
 	//体重と身長の変数定義
 
@@ -31,3 +59,4 @@ func BmiCalculation() {
 	fmt.Println(BmiStr, BmiResult)
 
 }
+*/
